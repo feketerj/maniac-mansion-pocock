@@ -384,10 +384,6 @@ export class GameEngine {
 
       if (spriteImg) {
         ctx.drawImage(spriteImg, screenActorX, screenActorY, spriteW, spriteH);
-      } else {
-        // Fallback pixel rect
-        ctx.fillStyle = a.dialogColor;
-        ctx.fillRect(screenActorX, screenActorY, spriteW, spriteH);
       }
 
       // Selected character indicator

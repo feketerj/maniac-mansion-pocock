@@ -1,0 +1,19 @@
+{
+  "name": "maniac-mansion-pocock",
+  "private": true,
+  "version": "2.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5177",
+    "build": "tsc && vite build",
+    "preview": "vite preview --port 5177 --host",
+    "test": "vitest run",
+    "lint:boundaries": "depcruise src"
+  },
+  "devDependencies": {
+    "dependency-cruiser": "^16.3.10",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vitest": "^2.0.5"
+  }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maniac Mansion — The Eccentric Estate (Matt Pocock Skills Edition)</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #0b0c10;
+      color: #c5c6c7;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 16px;
+    }
+    header {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.4rem;
+      color: #66fcf1;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-shadow: 0 0 8px rgba(102, 252, 241, 0.4);
+    }
+    .badge-bar {
+      margin-top: 6px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+    .badge {
+      background: #1f2833;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #45a29e;
+      color: #e5e5e5;
+    }
+    .viewport-frame {
+      border: 3px solid #1f2833;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9), 0 0 16px rgba(102, 252, 241, 0.15);
+      background: #000000;
+      border-radius: 4px;
+      padding: 2px;
+    }
+    canvas {
+      display: block;
+      width: 960px;
+      height: 600px;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      cursor: crosshair;
+    }
+    .legend {
+      margin-top: 14px;
+      width: 960px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      font-size: 0.78rem;
+      background: #161b22;
+      padding: 10px 14px;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+    }
+    .legend-col h3 {
+      color: #66fcf1;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 2px;
+    }
+    .legend-col ul {
+      list-style-type: none;
+      line-height: 1.4;
+    }
+    .key {
+      color: #ffeb3b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Eccentric Estate v3.0.0</h1>
+    <div class="badge-bar">
+      <span class="badge">Engine: Deep Modules SCUMM VM</span>
+      <span class="badge">Resolution: 320x200 EGA</span>
+      <span class="badge">Multi-Kid: Dave / Bernard / Syd</span>
+      <span class="badge">Framework: mattpocock-skills</span>
+    </div>
+  </header>
+
+  <div class="viewport-frame">
+    <canvas id="gameCanvas" width="320" height="200"></canvas>
+  </div>
+
+  <div class="legend">
+    <div class="legend-col">
+      <h3>Character Switching</h3>
+      <ul>
+        <li><span class="key">[1]</span> Dave (Protagonist, Porch)</li>
+        <li><span class="key">[2]</span> Bernard (Scholar, Foyer)</li>
+        <li><span class="key">[3]</span> Syd (Rocker, Cookery)</li>
+        <li>Or click <span class="key">[New kid]</span> / top banner tabs</li>
+      </ul>
+    </div>
+    <div class="legend-col">
+      <h3>Command Sentence</h3>
+      <ul>
+        <li>Click a <strong>Verb</strong>, then click an <strong>Object</strong></li>
+        <li>Two-object: <em>Unlock Front Door with Brass Key</em></li>
+        <li>Combine: <em>Use Batteries with Flashlight</em></li>
+        <li>Transfer: <em>Give Brass Key to Bernard</em></li>
+      </ul>
+    </div>
+    <div class="legend-col">
+      <h3>Quick Verb Keys</h3>
+      <ul>
+        <li><span class="key">[W]</span> Walk to &nbsp; <span class="key">[P]</span> Pick up</li>
+        <li><span class="key">[U]</span> Use &nbsp;&nbsp;&nbsp;&nbsp; <span class="key">[O]</span> Open</li>
+        <li><span class="key">[L]</span> Look at</li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
